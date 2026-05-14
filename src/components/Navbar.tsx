@@ -32,7 +32,9 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center">
             <a 
-              href="#" 
+              href="https://fromtherestaurant.com/gazpachos/locations/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brand-amber hover:bg-brand-rusty text-white px-6 py-2 rounded-sm transition-colors uppercase text-sm font-medium tracking-wide"
             >
               Order Online
@@ -58,7 +60,9 @@ const Navbar = () => {
             <a href="#about" className="text-gray-200 hover:text-brand-amber block py-2 text-lg uppercase tracking-widest">About</a>
             <a href="#location" className="text-gray-200 hover:text-brand-amber block py-2 text-lg uppercase tracking-widest">Location</a>
             <a 
-              href="#" 
+              href="https://fromtherestaurant.com/gazpachos/locations/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brand-amber hover:bg-brand-rusty text-white px-8 py-3 rounded-sm transition-colors uppercase text-sm font-medium tracking-wide mt-4 inline-block"
             >
               Order Online

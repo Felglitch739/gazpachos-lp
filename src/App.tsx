@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import OurStory from './components/OurStory';
 import InteractiveMenu from './components/InteractiveMenu';
+import Gallery from './components/Gallery';
 import FooterLocation from './components/FooterLocation';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <HeroSection />
         <OurStory />
         <InteractiveMenu />
+        <Gallery />
       </main>
       <FooterLocation />
     </div>
