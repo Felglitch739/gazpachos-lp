@@ -1,7 +1,7 @@
 import fachadaImg from '../fotos/FachadaGazpachos.png';
 import ribeyeImg from '../fotos/ribeye_skillet_bueno.png';
 import caldoImg from '../fotos/caldo_red.jpg';
-import mezcalitaImg from '../fotos/mezcalita_espadin.jpg';
+import tuetanosImg from '../fotos/tuetanosbueno.png';
 import lemonPieImg from '../fotos/lemon_pie.jpg';
 import chevesImg from '../fotos/fotocheves.jpg';
 
@@ -9,12 +9,12 @@ const images = [
   {
     src: fachadaImg,
     alt: "Gazpacho's Facade",
-    className: "col-span-1 row-span-1"
+    className: "col-span-2 row-span-2"
   },
   {
     src: ribeyeImg,
     alt: "Ribeye Skillet",
-    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2"
+    className: "col-span-1 row-span-2"
   },
   {
     src: caldoImg,
@@ -22,19 +22,19 @@ const images = [
     className: "col-span-1 row-span-1"
   },
   {
-    src: mezcalitaImg,
-    alt: "Smoked Mezcalita",
-    className: "col-span-1 row-span-2 md:col-span-2 md:row-span-2"
-  },
-  {
     src: lemonPieImg,
     alt: "Lemon Pie",
     className: "col-span-1 row-span-1"
   },
   {
+    src: tuetanosImg,
+    alt: "Tuétanos (Bone Marrow)",
+    className: "col-span-2 row-span-1"
+  },
+  {
     src: chevesImg,
     alt: "Ice cold beers",
-    className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1"
+    className: "col-span-2 row-span-1 md:col-span-2"
   }
 ];
 
@@ -49,7 +49,7 @@ const Gallery = () => {
         <div className="w-24 h-1 bg-brand-amber mx-auto rounded-full"></div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-3 md:grid-rows-3 gap-4 md:gap-6 h-[800px] md:h-[600px]">
+      <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-6 md:grid-rows-3 gap-4 md:gap-6 h-[1000px] md:h-[700px]">
         {images.map((image, index) => (
           <div 
             key={index} 
