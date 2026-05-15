@@ -40,7 +40,6 @@ const FooterLocation = () => {
           </div>
 
           <div className="mt-10 flex space-x-4">
-<<<<<<< HEAD
             <a 
               href="https://www.instagram.com/gazpachos.restaurant.bar/" 
               target="_blank"
@@ -56,13 +55,6 @@ const FooterLocation = () => {
               className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-brand-amber transition-colors text-white"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-=======
-            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-brand-amber transition-colors text-white font-medium text-sm">
-              IG
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-brand-amber transition-colors text-white font-medium text-sm">
-              FB
->>>>>>> 0150c19b4277e0fa7630c830accd7773d03ad443
             </a>
           </div>
         </div>
