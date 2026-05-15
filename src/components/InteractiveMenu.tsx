@@ -1,5 +1,21 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { menuData, categories } from '../data/menuData';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+};
 
 const InteractiveMenu = () => {
   const [activeTab, setActiveTab] = useState(categories[0]);
@@ -29,17 +45,28 @@ const InteractiveMenu = () => {
       </div>
 
       {/* Menu Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <motion.div 
+        key={activeTab} // This key triggers the animation again when the tab changes
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+      >
         {menuData[activeTab].map((item) => (
-          <div key={item.id} className="glass-card p-6 md:p-8 rounded-xl hover:border-brand-amber/30 transition-colors group">
+          <motion.div 
+            variants={itemVariants}
+            key={item.id} 
+            className="glass-card p-6 md:p-8 rounded-xl hover:border-brand-amber/30 transition-colors group"
+          >
             <div className="flex justify-between items-baseline mb-2">
               <h3 className="text-xl font-serif text-brand-amber group-hover:text-white transition-colors">{item.name}</h3>
               <span className="text-lg font-medium text-white">{item.price}</span>
             </div>
             <p className="text-gray-400 font-light leading-relaxed">{item.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

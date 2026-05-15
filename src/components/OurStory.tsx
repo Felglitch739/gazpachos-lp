@@ -1,10 +1,17 @@
+import { motion } from 'framer-motion';
+
 const OurStory = () => {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Text Content */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="mb-8">
             <span className="text-brand-amber text-sm uppercase tracking-[0.3em] font-medium mb-4 block">
               About Us
@@ -36,10 +43,16 @@ const OurStory = () => {
               We hope to see you here soon.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Visual Content */}
-        <div className="relative">
+        <motion.div 
+          className="relative"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
           <div className="glass-card p-3 rounded-2xl rotate-2 hover:rotate-0 transition-transform duration-500 z-10 relative">
             <img 
               src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1000&auto=format&fit=crop" 
@@ -57,7 +70,7 @@ const OurStory = () => {
           </div>
           
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full bg-brand-amber/5 blur-[100px]"></div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
