@@ -1,3 +1,8 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 import fachadaImg from '../fotos/FachadaGazpachos.png';
 import ribeyeImg from '../fotos/ribeye_skillet_bueno.png';
 import caldoImg from '../fotos/caldo_red.jpg';
@@ -6,39 +11,17 @@ import lemonPieImg from '../fotos/lemon_pie.jpg';
 import chevesImg from '../fotos/fotocheves.jpg';
 
 const images = [
-  {
-    src: fachadaImg,
-    alt: "Gazpacho's Facade",
-    className: "col-span-2 row-span-2"
-  },
-  {
-    src: ribeyeImg,
-    alt: "Ribeye Skillet",
-    className: "col-span-1 row-span-2"
-  },
-  {
-    src: caldoImg,
-    alt: "Pozole Rojo",
-    className: "col-span-1 row-span-1"
-  },
-  {
-    src: lemonPieImg,
-    alt: "Lemon Pie",
-    className: "col-span-1 row-span-1"
-  },
-  {
-    src: tuetanosImg,
-    alt: "Tuétanos (Bone Marrow)",
-    className: "col-span-2 row-span-1"
-  },
-  {
-    src: chevesImg,
-    alt: "Ice cold beers",
-    className: "col-span-2 row-span-1 md:col-span-2"
-  }
+  { src: fachadaImg, alt: "Gazpacho's Facade" },
+  { src: ribeyeImg, alt: "Ribeye Skillet" },
+  { src: caldoImg, alt: "Pozole Rojo" },
+  { src: tuetanosImg, alt: "Tuétanos (Bone Marrow)" },
+  { src: lemonPieImg, alt: "Lemon Pie" },
+  { src: chevesImg, alt: "Ice cold beers" }
 ];
 
 const Gallery = () => {
+  const [index, setIndex] = useState(-1);
+
   return (
     <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
       <div className="text-center mb-16">
@@ -49,21 +32,39 @@ const Gallery = () => {
         <div className="w-24 h-1 bg-brand-amber mx-auto rounded-full"></div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-6 md:grid-rows-3 gap-4 md:gap-6 h-[1000px] md:h-[700px]">
-        {images.map((image, index) => (
-          <div 
-            key={index} 
-            className={`glass-card overflow-hidden rounded-xl group relative ${image.className}`}
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6">
+        {images.map((image, i) => (
+          <motion.div 
+            key={i} 
+            className="glass-card overflow-hidden rounded-xl relative break-inside-avoid mb-6 cursor-pointer"
+            whileHover={{ 
+              scale: 1.03, 
+              boxShadow: "0 20px 40px rgba(0,0,0,0.8)",
+              borderColor: "rgba(255,255,255,0.2)"
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            onClick={() => setIndex(i)}
           >
-            <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+            <div className="absolute inset-0 bg-brand-dark/20 hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
             <img 
               src={image.src} 
               alt={image.alt} 
-              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+              className="w-full h-auto block"
+              loading="lazy"
             />
-          </div>
+          </motion.div>
         ))}
       </div>
+
+      <Lightbox
+        index={index}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+        slides={images.map(img => ({ src: img.src, alt: img.alt }))}
+        styles={{ 
+          container: { backgroundColor: "rgba(0, 0, 0, 0.85)", backdropFilter: "blur(8px)" } 
+        }}
+      />
       
       <div className="mt-12 text-center">
         <a 
