@@ -1,32 +1,39 @@
+import fachadaImg from '../fotos/FachadaGazpachos.png';
+import ribeyeImg from '../fotos/ribeye_skillet_bueno.png';
+import caldoImg from '../fotos/caldo_red.jpg';
+import mezcalitaImg from '../fotos/mezcalita_espadin.jpg';
+import lemonPieImg from '../fotos/lemon_pie.jpg';
+import chevesImg from '../fotos/fotocheves.jpg';
+
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop",
-    alt: "Wood-fired steak",
+    src: fachadaImg,
+    alt: "Gazpacho's Facade",
     className: "col-span-1 row-span-1"
   },
   {
-    src: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?q=80&w=800&auto=format&fit=crop",
-    alt: "Burger with fries",
+    src: ribeyeImg,
+    alt: "Ribeye Skillet",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2"
   },
   {
-    src: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop",
-    alt: "Craft cocktail",
+    src: caldoImg,
+    alt: "Pozole Rojo",
     className: "col-span-1 row-span-1"
   },
   {
-    src: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop",
-    alt: "Elegant drink",
+    src: mezcalitaImg,
+    alt: "Smoked Mezcalita",
     className: "col-span-1 row-span-2 md:col-span-2 md:row-span-2"
   },
   {
-    src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
-    alt: "Gourmet dish",
+    src: lemonPieImg,
+    alt: "Lemon Pie",
     className: "col-span-1 row-span-1"
   },
   {
-    src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
-    alt: "Restaurant interior",
+    src: chevesImg,
+    alt: "Ice cold beers",
     className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1"
   }
 ];
